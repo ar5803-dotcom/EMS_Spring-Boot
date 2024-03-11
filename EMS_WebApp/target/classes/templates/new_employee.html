@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System - Add Employee</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1514807486301-d6ddca12c3cc'); /* Static soothing wallpaper */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #333; /* Dark text color */
+        }
+
+        .container {
+            margin-top: 50px; /* Add some space from the top */
+            text-align: center; /* Center align content */
+        }
+
+        h1 {
+            color: #007bff; /* Blue heading color */
+            margin-bottom: 30px; /* Add some space below the heading */
+        }
+
+        hr {
+            border-color: #007bff; /* Blue border color for separating sections */
+            margin-top: 40px; /* Add some space above the horizontal line */
+            margin-bottom: 40px; /* Add some space below the horizontal line */
+        }
+
+        .form-control {
+            margin-bottom: 20px; /* Add space below form inputs */
+        }
+
+        .btn-info {
+            background-color: #007bff; /* Blue button color */
+            border-color: #007bff; /* Blue button border color */
+        }
+
+        .btn-info:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3; /* Darker blue border on hover */
+        }
+
+        a {
+            color: #007bff; /* Blue link color */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee Management System</h1>
+    <hr>
+    <h2>Add Employee</h2>
+
+    <form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+          method="POST" class="col-md-6 offset-md-3">
+        <input type="text" th:field="*{firstName}"
+               placeholder="Employee First Name" class="form-control">
+
+        <input type="text" th:field="*{lastName}"
+               placeholder="Employee Last Name" class="form-control">
+
+        <input type="text" th:field="*{email}"
+               placeholder="Employee Email" class="form-control">
+
+        <button type="submit" class="btn btn-info btn-block">Save Employee</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/"} class="text-muted">Back to Employee List</a>
+</div>
+
+<!-- Bootstrap JS (Optional) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
